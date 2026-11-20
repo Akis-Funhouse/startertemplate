@@ -27,11 +27,11 @@ A reusable starter template built with Next.js, shadcn/ui, Better Auth and SQLit
 
 ### 1. Clone the repository
 
-git clone YOUR_REPOSITORY_URL
+git clone [YOUR_REPOSITORY_URL](https://github.com/Akis-Funhouse/startertemplate)
 
 ### 2. Navigate into the project
 
-cd YOUR_PROJECT_NAME
+cd startertemplate
 
 ### 3. Install dependencies
 
