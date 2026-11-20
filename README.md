@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Next.js Starter Template
 
-First, run the development server:
+A reusable starter template built with Next.js, shadcn/ui, Better Auth and SQLite.
 
-```bash
+## Whats used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Better Auth
+- better-sqlite3
+
+## Features
+
+- User registration
+- Email and password login
+- SQLite database
+- Authentication sessions
+- Protected dashboard
+- User information display
+- Logout functionality
+
+## Installation
+
+### 1. Clone the repository
+
+git clone YOUR_REPOSITORY_URL
+
+### 2. Navigate into the project
+
+cd YOUR_PROJECT_NAME
+
+### 3. Install dependencies
+
+npm install
+
+### 4. Configure environment variables
+
+Copy the content of the example .env file and paste it into your actual .env file
+
+Generate a secret:
+npx auth secret
+
+Add the generated secret to your .env file.
+
+### 5. Initialize the database
+
+npx auth@latest migrate
+
+### 6. Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- / - Choose wether to Login or Register
+- /login - Login page
+- /register - Registration page
+- /dashboard - Protected dashboard
 
-## Learn More
+## Database
 
-To learn more about Next.js, take a look at the following resources:
+The app uses SQLite through better-sqlite3
+Better Auth manages users, accounts and sessions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Better Auth handles registration, login, session management and logout.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
