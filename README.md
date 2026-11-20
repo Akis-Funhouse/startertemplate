@@ -11,7 +11,7 @@ A reusable starter template built with Next.js, shadcn/ui, Better Auth and SQLit
 - Tailwind CSS
 - shadcn/ui
 - Better Auth
-- better-sqlite3
+- better-SQlite3
 
 ## Features
 
