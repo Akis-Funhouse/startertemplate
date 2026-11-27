@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/card";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 
 export const instant = false;
 
@@ -29,9 +28,10 @@ export default async function Dashboard() {
   const user = session.user;
 
   return (
-    <main className="min-h-screen bg-muted/40">
+    <main className="min-h-screen bg-gray-50">
+
       {/* Navbar */}
-      <header className="border-b bg-background">
+      <header className="border-b bg-gray-100">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <LogoutButton />
         </div>
@@ -40,9 +40,7 @@ export default async function Dashboard() {
       {/* Dashboard content */}
       <div className="mx-auto max-w-5xl space-y-8 p-6 md:p-10">
 
-        {/* Welcome section */}
         <div className="space-y-2">
-
           <h2 className="text-3xl font-bold tracking-tight">
             Welcome, {user.name}!
           </h2>
@@ -71,7 +69,7 @@ export default async function Dashboard() {
               <div className="grid flex-1 gap-4 sm:grid-cols-2">
                 <div className="space-y-1">
                   <p className="text-sm text-muted-foreground">
-                    Full name
+                    Name
                   </p>
                   <p className="font-medium">
                     {user.name}

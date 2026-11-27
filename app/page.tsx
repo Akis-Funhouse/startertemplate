@@ -7,11 +7,13 @@ import {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-muted/40 p-6">
+    <main className="flex min-h-screen items-center justify-center p-6">
       <Card className="w-full max-w-lg">
 
         <CardContent className="space-y-4">
-          <Button className="w-full" size="lg">
+          <Button 
+          className="w-full" 
+          size="lg">
             <Link href="/login">
               Login to your account
             </Link>
