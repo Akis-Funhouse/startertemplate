@@ -1,7 +1,7 @@
 
 # Next.js Starter Template
 
-A reusable starter template built with Next.js, shadcn/ui, Better Auth and SQLite.
+A reusable starter template built with Next.js, shadcn/ui, Better Auth and better SQLite3
 
 ## Whats used
 
@@ -16,18 +16,16 @@ A reusable starter template built with Next.js, shadcn/ui, Better Auth and SQLit
 ## Features
 
 - User registration
-- Email and password login
+- Login with email and password
 - SQLite database
-- Authentication sessions
-- Protected dashboard
-- User information display
-- Logout functionality
+- Authentication sessions with logout
+- Protected dashboard that displays user info
 
 ## Installation
 
 ### 1. Clone the repository
 
-git clone [YOUR_REPOSITORY_URL](https://github.com/Akis-Funhouse/startertemplate)
+git clone [YOUR_REPOSITORY_URL]
 
 ### 2. Navigate into the project
 
@@ -58,7 +56,7 @@ Open http://localhost:3000
 
 ## Routes
 
-- / - Choose wether to Login or Register
+- / - buttons to login and register
 - /login - Login page
 - /register - Registration page
 - /dashboard - Protected dashboard
