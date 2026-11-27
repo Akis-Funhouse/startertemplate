@@ -23,11 +23,13 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   async function handleRegister(e: React.FormEvent) {
     e.preventDefault();
+
     setError("");
 
     const { error } = await authClient.signUp.email({
@@ -39,6 +41,7 @@ export default function Register() {
 
     if (error) {
       setError(error.message || "Registration failed");
+      return;
     }
 
     router.push("/dashboard");

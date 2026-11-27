@@ -22,25 +22,36 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
+
     setError("");
+    setLoading(true);
 
-    const { error } = await authClient.signIn.email({
-      email,
-      password,
-      callbackURL: "/dashboard",
-    });
+    try {
+      const { error } = await authClient.signIn.email({
+        email,
+        password,
+        callbackURL: "/dashboard",
+      });
 
-    if (error) {
-      setError(error.message || "Login failed");
+      if (error) {
+        setError(error.message || "Login failed");
+        return;
+      }
+
+      router.push("/dashboard");
+      router.refresh();
+
+    } catch {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false);
     }
-
-    router.push("/dashboard");
-    router.refresh();
   }
 
   return (
@@ -82,9 +93,13 @@ export default function Login() {
                 <p className="text-sm text-red-500">{error}</p>
               )}
 
-              <Button type="submit" className="w-full">
-                Login
-              </Button>
+              <Button
+              type="submit"
+              className="w-full"
+              disabled={loading}
+              >
+                {loading ? "Logging in..." : "Login"}
+                </Button>
             </div>
           </form>
         </CardContent>
