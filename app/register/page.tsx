@@ -28,10 +28,12 @@ export default function Register() {
   const router = useRouter();
 
   async function handleRegister(e: React.FormEvent) {
-    e.preventDefault();
+  e.preventDefault();
 
-    setError("");
+  setError("");
+  setLoading(true);
 
+  try {
     const { error } = await authClient.signUp.email({
       name,
       email,
@@ -46,7 +48,13 @@ export default function Register() {
 
     router.push("/dashboard");
     router.refresh();
+
+  } catch {
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
   }
+}
 
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
@@ -76,6 +84,7 @@ export default function Register() {
                 <Input
                   id="email"
                   type="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -87,6 +96,7 @@ export default function Register() {
                 <Input
                   id="password"
                   type="password"
+                  autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   minLength={8}
@@ -98,8 +108,12 @@ export default function Register() {
                 <p className="text-sm text-red-500">{error}</p>
               )}
 
-              <Button type="submit" className="w-full">
-                Sign up
+              <Button 
+              type="submit" 
+              className="w-full"
+              disabled={loading}
+              >
+                {loading ? "Creating account..." : "sign up"}
               </Button>
             </div>
           </form>

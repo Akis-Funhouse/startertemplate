@@ -61,9 +61,7 @@ export default async function Dashboard() {
               {/* Avatar */}
               <Avatar className="h-16 w-16">
                 <AvatarFallback className="text-xl font-semibold">
-                  {user.name
-                  ? user.name.charAt(0).toUpperCase()
-                  : user.email.charAt(0).toUpperCase()}
+                  {(user.name?.[0] || user.email[0]).toUpperCase()}
                 </AvatarFallback>
               </Avatar>
 
